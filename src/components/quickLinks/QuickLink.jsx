@@ -13,7 +13,7 @@ const QuickLink = () => {
 
   return (
     <>
-      <QuickLinksButton onClick={togglePopup} />
+      <QuickLinksButton onClick={togglePopup} isOpen={isOpen} />
       {isOpen && <QuickLinksPopup onClose={togglePopup} />}
     </>
   );
