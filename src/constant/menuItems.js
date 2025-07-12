@@ -6,28 +6,25 @@ export const menuItems = [
     dropdownItems: [
       "Explore Industries →",
       "Explore Tech Careers →",
-      "Careers+ →"
-    ]
+      "Careers+ →",
+    ],
   },
   {
     title: "Certifications",
-    hasDropdown: false
+    hasDropdown: false,
   },
   {
     title: "Enterprise",
-    hasDropdown: false
+    hasDropdown: false,
   },
   {
     title: "Government",
     hasDropdown: true,
-    dropdownItems: [
-      "State & Local →",
-      "Federal →"
-    ]
+    dropdownItems: ["State & Local →", "Federal →"],
   },
   {
     title: "Partner",
-    hasDropdown: false
+    hasDropdown: false,
   },
   {
     title: "Academic",
@@ -36,11 +33,11 @@ export const menuItems = [
       "Higher Education →",
       "Secondary Education →",
       "Instructors →",
-      "Students →"
-    ]
+      "Students →",
+    ],
   },
   {
     title: "Shop",
-    hasDropdown: false
-  }
+    hasDropdown: false,
+  },
 ];

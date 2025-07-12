@@ -19,11 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow">
-          {children}
-          <TabBar tabs={array} />
-          <Button value="Connect with us" />
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
         <QuickLink />
         <ChatBot />

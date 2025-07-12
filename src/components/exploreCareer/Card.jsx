@@ -44,7 +44,7 @@ const Card = ({
               </div>
               {!noButton && buttonText && (
                 <div>
-                  <button className="px-6 py-2 border border-red-700 bg-red-700 text-white rounded-full font-medium transition-colors duration-200 hover:bg-red-800 hover:border-red-800 xl:mt-2 text-content-secondary text-m-sm-body">
+                  <button className="px-6 py-2 border border-red-700 bg-red-700 text-white rounded-full font-medium transition-colors duration-200 hover:bg-red-800 hover:border-red-800 xl:mt-2 text-content-secondary text-m-sm-body cursor-pointer">
                     {buttonText}
                   </button>
                 </div>
