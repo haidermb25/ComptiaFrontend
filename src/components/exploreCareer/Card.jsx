@@ -1,4 +1,7 @@
-// components/Card.jsx
+"use client";
+import React from 'react';
+import CareerCard from '@/components/shared/eachTypeCards/careerCards';
+
 const Card = ({
   title,
   description,
@@ -10,7 +13,7 @@ const Card = ({
   hasImage = false,
   imageUrl = '',
   isSpecialCard = false,
-  sideImage = false, // New prop for side-by-side layout
+  sideImage = false,
 }) => {
   return (
     <div className={`${width} ${height} bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200`}>
@@ -118,6 +121,16 @@ const Card = ({
           )}
         </>
       )}
+      <CareerCard
+        title={title}
+        description={description}
+        buttonText={buttonText}
+        noButton={noButton}
+        hasImage={hasImage}
+        imageUrl={imageUrl}
+        isSpecialCard={isSpecialCard}
+        sideImage={sideImage}
+      />
     </div>
   );
 };

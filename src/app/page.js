@@ -1,5 +1,7 @@
 // app/page.js
+import HomePage from '@/components/home/homepage';
 import Card from "@/components/exploreCareer/Card";
+import CertificationGrid from "@/components/certifications/CertificationsGrid";
 
 export default function Home() {
   return (
@@ -19,6 +21,11 @@ export default function Home() {
           Inspire the first step in your career. Explore tech careers or industry sectors to learn about earning potential, 
           hiring markets, top certifications, skill requirements, and more.
         </p>
+      </div>
+
+      {/* Homepage Components */}
+      <div className="bg-white">
+        <HomePage />
       </div>
 
       {/* First Section - Two Cards Side by Side (Full Screen Height) */}
@@ -85,6 +92,20 @@ export default function Home() {
           hasImage={false}
           isSpecialCard={true}
         />
+      </div>
+
+      {/* NEW SECTION - Certifications Grid */}
+      <div className="py-16 bg-white">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            CompTIA <span className="text-red-600">Certifications</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Discover the right certification path for your career goals. From entry-level to expert, 
+            CompTIA certifications validate your skills and open doors to new opportunities.
+          </p>
+        </div>
+        <CertificationGrid />
       </div>
     </div>
   );
