@@ -5,6 +5,7 @@ import SubMenu from './SubMenu';
 import LoginModal from './LoginModal';
 import MobileMenu from './MobileMenu';
 import { useRouter } from 'next/navigation';
+import SearchBar from '@/components/search/searchBar';
 
 const MainHeader = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -47,7 +48,9 @@ const MainHeader = () => {
     }
   };
 
-
+  const handleNavItemClick = () => {
+    setActiveDropdown(null);
+  };
 
   useEffect(() => {
     routingArray.forEach(r => {
@@ -68,7 +71,7 @@ const MainHeader = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md" ref={navRef}>
+    <header className="sticky top-0 z-40 bg-white shadow-md" ref={navRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -108,18 +111,13 @@ const MainHeader = () => {
                       items={item.dropdownItems}
                       onItemClick={(dropdownItem) => handleRouting(dropdownItem)}
                     />
-
                   </div>
                 )}
               </div>
             ))}
 
-            {/* Icons */}
-            <button className="text-gray-700 hover:text-red-600 p-2 transition-transform duration-300 transform hover:scale-110 active:scale-95">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+            {/* Search Icon */}
+            <SearchBar onNavItemClick={handleNavItemClick} isIconOnly={true} />
 
             <button className="text-gray-700 hover:text-red-600 p-2 relative transition-transform duration-300 transform hover:scale-110 active:scale-95">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -140,7 +138,10 @@ const MainHeader = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center space-x-4">
+            {/* Mobile Search Icon */}
+            <SearchBar onNavItemClick={handleNavItemClick} isIconOnly={true} />
+            
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="text-gray-700 hover:text-red-600 p-2"

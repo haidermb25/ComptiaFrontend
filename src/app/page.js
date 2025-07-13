@@ -2,6 +2,7 @@
 import HomePage from '@/components/home/homepage';
 import Card from "@/components/exploreCareer/Card";
 import CertificationGrid from "@/components/certifications/CertificationsGrid";
+import CompTIACore1Page from "@/components/certifications/addTocart/CompTIACore1Page";
 
 export default function Home() {
   return (
@@ -94,7 +95,7 @@ export default function Home() {
         />
       </div>
 
-      {/* NEW SECTION - Certifications Grid */}
+      {/* CERTIFICATIONS SECTION */}
       <div className="py-16 bg-white">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -106,6 +107,11 @@ export default function Home() {
           </p>
         </div>
         <CertificationGrid />
+      </div>
+
+      {/* NEW SECTION - CompTIA A+ Core 1 Page */}
+      <div className="py-16">
+        <CompTIACore1Page />
       </div>
     </div>
   );
