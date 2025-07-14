@@ -121,7 +121,7 @@ const Card = ({
           )}
         </>
       )}
-      <CareerCard
+      {/* <CareerCard
         title={title}
         description={description}
         buttonText={buttonText}
@@ -130,7 +130,7 @@ const Card = ({
         imageUrl={imageUrl}
         isSpecialCard={isSpecialCard}
         sideImage={sideImage}
-      />
+      /> */}
     </div>
   );
 };
