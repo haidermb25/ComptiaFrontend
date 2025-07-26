@@ -2,7 +2,7 @@
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer/Footer";
-import TabBar from "@/components/shared/tabBar/tabBar";
+import TabBar from "@/components/shared/tabBar/TabBar";
 import Button from "@/components/shared/buttons/Button";
 import QuickLink from "@/components/quickLinks/QuickLink";
 import ChatBot from "@/components/chatbot/ChatBot";
