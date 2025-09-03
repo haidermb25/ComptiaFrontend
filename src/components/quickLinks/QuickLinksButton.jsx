@@ -4,7 +4,7 @@ const QuickLinksButton = ({ onClick, isOpen }) => {
   return (
     <button 
       onClick={onClick}
-      className={`fixed ${isOpen ? 'left-[250px]' : 'left-0'}  transform -translate-y-1/2 z-[100] hover:opacity-90 transition-opacity border-0 rounded-r-lg shadow-lg flex flex-row items-center justify-center gap-2 text-white cursor-pointer`}
+      className={`fixed ${isOpen ? 'left-[250px]' : 'left-0'}  transform -translate-y-1/2 z-[1] hover:opacity-90 transition-opacity border-0 rounded-r-lg shadow-lg flex flex-row items-center justify-center gap-2 text-white cursor-pointer`}
       aria-label="Quick Links"
       style={{ 
         top: `calc(15vh + 74px)`,

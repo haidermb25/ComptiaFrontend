@@ -1,7 +1,12 @@
 "use client";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import CreateAccountModal from './CreateAccountModal';
+import ForgotPasswordModal from './ForgotPasswordModal';
 
 const LoginModal = ({ onClose }) => {
+  const [showCreateAccount, setShowCreateAccount] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -9,8 +14,39 @@ const LoginModal = ({ onClose }) => {
     };
   }, []);
 
+  const handleShowCreateAccount = () => {
+    setShowCreateAccount(true);
+  };
+
+  const handleShowForgotPassword = () => {
+    setShowForgotPassword(true);
+  };
+
+  const handleBackToLogin = () => {
+    setShowCreateAccount(false);
+    setShowForgotPassword(false);
+  };
+
+  if (showCreateAccount) {
+    return (
+      <CreateAccountModal 
+        onClose={onClose} 
+        onSwitchToLogin={handleBackToLogin} 
+      />
+    );
+  }
+
+  if (showForgotPassword) {
+    return (
+      <ForgotPasswordModal 
+        onClose={onClose} 
+        onSwitchToLogin={handleBackToLogin} 
+      />
+    );
+  }
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-50">
       {/* Modal Content */}
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6 mx-4">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Login to CompTIA</h3>
@@ -18,10 +54,11 @@ const LoginModal = ({ onClose }) => {
         <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Username or Email
+              Username or Email <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Enter your username or email"
             />
@@ -29,10 +66,11 @@ const LoginModal = ({ onClose }) => {
           
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Password
+              Password <span className="text-red-500">*</span>
             </label>
             <input
               type="password"
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Enter your password"
             />
@@ -51,9 +89,13 @@ const LoginModal = ({ onClose }) => {
               </label>
             </div>
             
-            <a href="#" className="text-sm text-red-600 hover:text-red-500">
+            <button 
+              type="button"
+              onClick={handleShowForgotPassword}
+              className="text-sm text-red-600 hover:text-red-500"
+            >
               Forgot password?
-            </a>
+            </button>
           </div>
           
           <div className="flex space-x-4">
@@ -75,7 +117,7 @@ const LoginModal = ({ onClose }) => {
         </form>
         
         <div className="mt-6 text-center text-sm text-gray-500">
-          <p>New to CompTIA? <a href="#" className="text-red-600 hover:text-red-500">Create an account</a></p>
+          <p>New to CompTIA? <button onClick={handleShowCreateAccount} className="text-red-600 hover:text-red-500">Create an account</button></p>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ const QuickLinksPopup = ({ onClose }) => {
   ];
 
   return (
-    <div className="fixed left-0 top-[15vh] w-[250px] max-h-[85vh] bg-white shadow-xl border border-gray-200 z-[100] flex flex-col">
+    <div className="fixed left-0 top-[15vh] w-[250px] max-h-[85vh] bg-white shadow-xl border border-gray-200 z-[1] flex flex-col">
       
       {/* Sticky Close Button */}
       <div className="sticky top-0 bg-white z-10 flex justify-end p-2 border-b border-black w-[86%] mx-auto">
