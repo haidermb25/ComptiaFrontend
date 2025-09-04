@@ -12,7 +12,7 @@ const ChatbotWidget = () => {
     <>
       {/* ✅ Image Button Always at Bottom Right */}
       {!isOpen && (
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className="fixed bottom-4 right-4 z-[1]">
           <button onClick={toggleChat}>
             <Image
               src="/boat.png"
@@ -27,7 +27,7 @@ const ChatbotWidget = () => {
 
       {/* ✅ Chat Panel Appears at Same Position */}
       <div
-        className={`fixed bottom-4 right-4 z-50 w-[90vw] sm:w-80 h-[70vh] sm:h-[500px] bg-white rounded-xl shadow-xl border border-gray-300 flex flex-col overflow-hidden transition-all duration-500 ease-in-out origin-bottom-right ${
+        className={`fixed bottom-4 right-4 z-[1] w-[90vw] sm:w-80 h-[70vh] sm:h-[500px] bg-white rounded-xl shadow-xl border border-gray-300 flex flex-col overflow-hidden transition-all duration-500 ease-in-out origin-bottom-right ${
           isOpen
             ? "scale-100 opacity-100 visible"
             : "scale-0 opacity-0 invisible"

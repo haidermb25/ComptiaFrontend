@@ -52,7 +52,7 @@ const ForgotPasswordModal = ({ onClose, onSwitchToLogin }) => {
               
               <button
                 onClick={onClose}
-                className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                className="w-full bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
               >
                 Close
               </button>
@@ -108,10 +108,21 @@ const ForgotPasswordModal = ({ onClose, onSwitchToLogin }) => {
             
             <button
               type="button"
-              onClick={onClose}
+              onClick={() => {
+                // Clear email field
+                setEmail('');
+              }}
               className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
-              Cancel
+              Clear
+            </button>
+            
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-full bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            >
+              Close
             </button>
           </div>
         </form>

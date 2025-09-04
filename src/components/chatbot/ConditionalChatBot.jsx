@@ -1,23 +1,23 @@
 "use client";
 import { usePathname } from 'next/navigation';
-import QuickLink from './QuickLink';
+import ChatBot from './ChatBot';
 
-const ConditionalQuickLink = () => {
+const ConditionalChatBot = () => {
   const pathname = usePathname();
   
-  // List of authentication routes where QuickLink should be hidden
+  // List of authentication routes where ChatBot should be hidden
   const authRoutes = ['/Login', '/signUp'];
   
   // Check if current path is an authentication route
   const isAuthRoute = authRoutes.some(route => pathname.includes(route));
   
-  // Don't render QuickLink on authentication pages
+  // Don't render ChatBot on authentication pages
   if (isAuthRoute) {
     return null;
   }
   
-  // Render QuickLink on all other pages
-  return <QuickLink />;
+  // Render ChatBot on all other pages
+  return <ChatBot />;
 };
 
-export default ConditionalQuickLink;
+export default ConditionalChatBot;
